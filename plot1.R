@@ -13,5 +13,6 @@ pwrusetwodays$dateTime <- strptime(pwrusetwodays$dateTime, "%d/%m/%Y %H:%M:%S")
 attach(pwrusetwodays)
 png("plot1.png", width=480, height=480, units="px")
 # Plot the distribution of global active power
-hist(as.numeric(as.character(Global_active_power)), col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+p1<- hist(as.numeric(as.character(Global_active_power)), col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+print(p1)
 dev.off()
