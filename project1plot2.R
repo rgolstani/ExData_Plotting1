@@ -2,6 +2,11 @@
 
 # move to the directory where the data file exdata_data_household_power_consumption.zip is
 setwd("~/Desktop/ExploratoryCoursera")
+if(!file.exists("exdata_data_household_power_consumption.zip")) {
+url<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip" # internet address of the used data
+download.file(url, destfile= "exdata_data_household_power_consumption.zip", method="curl")  # downloading to working directory
+}
+
 # Read data set after unzipping the data file
 pwruse <- read.table(unz("exdata_data_household_power_consumption.zip", "household_power_consumption.txt"),
                      header=T, sep=";")
