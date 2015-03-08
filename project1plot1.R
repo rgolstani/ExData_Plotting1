@@ -5,9 +5,9 @@
 # moving to the working directory where the dowloaded files are in zip format
 # exdata_data_household_power_consumption.zip is our data file
 setwd("~/Desktop/ExploratoryCoursera")
-if(!file.exists("household_power_consumption.zip")) {
+if(!file.exists("exdata_data_household_power_consumption.zip")) {
 url<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-download.file(url, destfile= "household_power_consumption.zip", method="curl")
+download.file(url, destfile= "exdata_data_household_power_consumption.zip", method="curl")
 }
 # Read data set after unzipping the data file
 pwruse <- read.table(unz("exdata_data_household_power_consumption.zip", "household_power_consumption.txt"),
